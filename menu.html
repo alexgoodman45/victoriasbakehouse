@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MENU | Victoria's Bakehouse</title>
+    <style>
+        :root {
+            --primary-color: #391D14;
+            --bg-light: #F4F0EA;
+            --text-dark: #20303C;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-dark);
+            background-color: #ffffff;
+            line-height: 1.6;
+        }
+
+        nav {
+            background-color: var(--primary-color);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo { color: #ffffff; font-weight: bold; font-size: 1.2rem; }
+        nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 20px; }
+        nav ul li a { color: #E5E5E5; text-decoration: none; font-size: 0.9rem; }
+        nav ul li a:hover { color: #ffffff; }
+
+        .menu-header { text-align: center; padding: 3rem 2rem 1rem 2rem; }
+        .menu-header h1 { font-size: 3rem; color: var(--primary-color); margin: 0; }
+
+        .menu-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .menu-card {
+            background: #ffffff;
+            text-align: center;
+            padding-bottom: 20px;
+        }
+
+        .menu-card img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .card-title {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin: 15px 0 10px 0;
+            font-weight: bold;
+        }
+
+        .card-meta {
+            font-size: 0.95rem;
+            color: #666;
+            margin: 5px 0;
+            font-style: italic;
+        }
+
+        .card-price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin: 10px 0;
+        }
+
+        .collapsible-content {
+            display: none;
+            text-align: left;
+            padding: 0 15px;
+            margin-top: 15px;
+        }
+
+        .list-title {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin: 10px 0 5px 0;
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        .menu-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 0.95rem;
+            color: #444;
+            text-align: center;
+        }
+
+        .menu-list li {
+            margin-bottom: 4px;
+        }
+
+        .show-more-btn {
+            background: none;
+            border: none;
+            color: var(--primary-color);
+            text-decoration: underline;
+            font-size: 0.9rem;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 5px;
+            margin-top: 5px;
+        }
+
+        footer { background-color: var(--primary-color); color: #ffffff; text-align: center; padding: 3rem 2rem; margin-top: 4rem; }
+        .social-links a { color: #ffffff; margin: 0 10px; text-decoration: none; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Victoria's Bakehouse</div>
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="menu.html">MENU</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+    </nav>
+
+    <header class="menu-header">
+        <h1>Our Menu</h1>
+    </header>
+
+    <div class="menu-container">
+        <div class="menu-grid">
+
+            <!-- 1. Decorated Sugar Cookies -->
+            <div class="menu-card">
+                <img src="images/sugar-cookies.jpg" alt="Decorated Sugar Cookies">
+                <div class="card-title">Decorated Sugar Cookies</div>
+                <p>Decorated sugar cookies for any occasion, you name it!</p>
+                <p style="margin-top: 10px;">Starts at $36 per dozen and depends on the complexity of the design.</p>
+                <div class="card-price">$36</div>
+            </div>
+
+            <!-- 2. Assorted Sugar Cookies -->
+            <div class="menu-card">
+                <img src="images/assorted-sugar-cookies.jpg" alt="Assorted Sugar Cookies">
+                <div class="card-title">Assorted Sugar Cookies</div>
+                <p>Price per dozen.</p>
+                <div class="card-price">$15</div>
+                <button class="show-more-btn" onclick="toggleCard(this)">Show More</button>
+                <div class="collapsible-content">
+                    <div class="list-title">Types of Cookies</div>
+                    <ul class="menu-list">
+                        <li>+ Thumbprint Cookies (Assorted Filling)</li>
+                        <li>+ Russian Tea Cake Cookies</li>
+                        <li>+ Chocolate Chip Cookie</li>
+                        <li>+ Italian Ricotta Cheese Cookie</li>
+                        <li>+ Peanut Butter Blossoms</li>
+                        <li>+ Chocolate Cookies w/ Chocolate Chunks</li>
+                        <li>+ Polish Kalachi (Assorted Filling)</li>
+                        <li>+ Lemon Cookie</li>
+                        <li>+ Lemon Blueberry Cookies</li>
+                        <li>+ Strawberry Cookie</li>
+                        <li>+ Chocolate Crinkles</li>
+                        <li>+ Lemon Crinkles</li>
+                        <li>+ Buckeye Balls</li>
+                        <li>+ Spritz Cookies</li>
+                        <li>+ Caramel Cups</li>
+                        <li>+ Oatmeal Cookies</li>
+                        <li>+ Soft Pumpkin Chocolate Chip Cookies</li>
+                        <li>+ and More!</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 3. Gourmet Cookies -->
+            <div class="menu-card">
+                <img src="images/gourmet-cookies.jpg" alt="Gourmet Cookies">
+                <div class="card-title">Gourmet Cookies</div>
+                <p>Price per 8 ounce cookie.</p>
+                <div class="card-price">$8</div>
+                <button class="show-more-btn" onclick="toggleCard(this)">Show More</button>
+                <div class="collapsible-content">
+                    <div class="list-title">Types of Gourmet Cookies</div>
+                    <ul class="menu-list">
+                        <li>+ Cream Cheese Stuffed Red Velvet</li>
+                        <li>+ Brownie Stuffed Chocolate Chip</li>
+                        <li>+ Chocolate Chip Stuffed w/ Snickers</li>
+                        <li>+ Chocolate Chip Stuffed w/ Twix</li>
+                        <li>+ Chocolate Chip Stuffed w/ Almond Joy</li>
+                        <li>+ Chocolate Chip Stuffed w/ KitKat & Twix</li>
+                        <li>+ Cookies n' Cream Cookie (Oreo)</li>
+                        <li>+ Chocolate Cookie Stuffed w/ Buckeye Balls</li>
+                        <li>+ Carrot Cake Cookie w/ Cream Cheese Frost</li>
+                    </div>
+                </ul>
+            </div>
+
+            <!-- 4. Cakes -->
+            <div class="menu-card">
+                <img src="images/cakes.jpg" alt="Cakes">
+                <div class="card-title">Cakes</div>
+                <p>Starting at $25 and depends on size, flavor(s), and complexity of design.</p>
+                <div class="card-price">$25</div>
+                <button class="show-more-btn" onclick="toggleCard(this)">Show More</button>
+                <div class="collapsible-content">
+                    <div class="list-title">Flavors</div>
+                    <ul class="menu-list">
+                        <li>+ Vanilla | + Chocolate | + Cookie Butter</li>
+                        <li>+ Red Velvet | + White | + Marble</li>
+                        <li>+ Almond | + Lemon | + Carrot</li>
+                        <li>+ Pumpkin | + Peanut Butter</li>
+                    </ul>
+                    <div class="list-title">Cake Fillings</div>
+                    <ul class="menu-list">
+                        <li>+ Lemon Curd | + Chocolate Ganache</li>
+                        <li>+ Cream Cheese | + Raspberry</li>
+                        <li>+ Dulce de leche | + Strawberry</li>
+                        <li>+ Peanut Butter | + Caramel | + Nutella</li>
+                        <li>+ Cookie and Cream | + Cookie Butter</li>
+                    </ul>
+                    <div class="list-title">Cake Frosting</div>
+                    <ul class="menu-list">
+                        <li>+ Vanilla Buttercream</li>
+                        <li>+ Chocolate Buttercream</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 5. Cupcakes -->
+            <div class="menu-card">
+                <img src="images/cupcakes.jpg" alt="Cupcakes">
+                <div class="card-title">Cupcakes</div>
+                <p>Price is per cupcake. Minimum order 1 dozen.</p>
+                <div class="card-price">$3</div>
+                <button class="show-more-btn" onclick="toggleCard(this)">Show More</button>
+                <div class="collapsible-content">
+                    <div class="list-title">Cupcake Flavors</div>
+                    <ul class="menu-list">
+                        <li>+ Vanilla</li>
+                        <li>+ Chocolate</li>
+                        <li>+ Red Velvet</li>
+                        <li>+ Lemon</li>
+                        <li>+ Strawberry</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 6. French Macarons -->
+            <div class="menu-card">
+                <img src="images/macarons.jpg" alt="French Macarons">
+                <div class="card-title">French Macarons</div>
+                <p>Price per macaron. Minimum order 1 dozen.</p>
+                <div class="card-price">$2</div>
+                <button class="show-more-btn" onclick="toggleCard(this)">Show More</button>
+                <div class="collapsible-content">
+                    <div class="list-title">Macaron Flavors</div>
+                    <ul class="menu-list">
+                        <li>+ Strawberry | + Orange | + Lemon</li>
+                        <li>+ Matcha | + Green Apple | + Blueberry</li>
+                        <li>+ Ube | + Raspberry | + Vanilla</li>
+                        <li>+ Chocolate | + Nutella</li>
+                        <li>+ Strawberry Cheesecake</li>
+                        <li>+ Blueberry Mascarpone</li>
+                        <li>+ Lemon Poppyseed</li>
+                        <li>+ Raspberry Lemon | + Biscoff</li>
+                        <li>+ Chocolate Cherry | + Tiramisu</li>
+                        <li>+ Mint Chocolate | + Red Velvet</li>
+                        <li>+ Dark Chocolate Peanut Butter</li>
+                        <li>+ Peach | + Cookies n' Cream Cookie (Oreo)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 7. French Macaron Tower -->
+            <div class="menu-card">
+                <img src="images/macaron-tower.jpg" alt="French Macaron Tower">
+                <div class="card-title">French Macaron Tower</div>
+                <div class="card-meta">Small $125 | Large $250</div>
+                <div class="card-price">From $125</div>
+                <button class="show-more-btn" onclick="toggleCard(this)">Show More</button>
+                <div class="collapsible-content">
+                    <div class="list-title">Macaron Flavors</div>
+                    <ul class="menu-list">
+                        <li>+ Strawberry | + Orange | + Lemon | + Matcha</li>
+                        <li>+ Green Apple | + Blueberry | + Ube | + Raspberry</li>
+                        <li>+ Vanilla | + Chocolate | + Nutella</li>
+                        <li>+ Strawberry Cheesecake | + Blueberry Mascarpone</li>
+                        <li>+ Lemon Poppyseed | + Raspberry Lemon | + Biscoff</li>
+                        <li>+ Chocolate Cherry | + Tiramisu | + Mint Chocolate</li>
+                        <li>+ Red Velvet | + Dark Chocolate Peanut Butter</li>
+                        <li>+ Peach | + Cookies n' Cream Cookie (Oreo)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 8. French Macaron Cake -->
+            <div class="menu-card">
+                <img src="images/macaron-cake.jpg" alt="French Macaron Cake">
+                <div class="card-title">French Macaron Cake</div>
+                <p class="card-meta">Small has 8 macarons. Large has 27 macarons.</p>
+                <p>Small $25 | Large $65</p>
+                <div class="card-price">From $25</div>
+                <button class="show-more-btn" onclick="toggleCard(this)">Show More</button>
+                <div class="collapsible-content">
+                    <div class="list-title">Macaron Flavors</div>
+                    <ul class="menu-list">
+                        <li>+ Strawberry | + Orange | + Lemon | + Matcha</li>
+                        <li>+ Green Apple | + Blueberry | + Ube | + Raspberry</li>
+                        <li>+ Vanilla | + Chocolate | + Nutella</li>
+                        <li>+ Strawberry Cheesecake | + Blueberry Mascarpone</li>
+                        <li>+ Lemon Poppyseed | + Raspberry Lemon | + Biscoff</li>
+                        <li>+ Chocolate Cherry | + Tiramisu | + Mint Chocolate</li>
+                        <li>+ Red Velvet | + Dark Chocolate Peanut Butter</li>
+                        <li>+ Peach | + Cookies n' Cream Cookie (Oreo)</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>Follow us:</p>
+        <div class="social-links">
+            <a href="https://www.facebook.com/profile.php?id=100057054655814" target="_blank" rel="noopener">Facebook</a>
+            <a href="https://www.instagram.com/victoriasbakery19" target="_blank" rel="noopener">Instagram</a>
+        </div>
+        <p style="margin-top: 25px; opacity: 0.7;">&copy; 2026 Victoria's Bakehouse</p>
+    </footer>
+
+    <script>
+        function toggleCard(btn) {
+            const container = btn.nextElementSibling;
+            if (container.style.display === 'block') {
+                container.style.display = 'none';
+                btn.textContent = 'Show More';
+            } else {
+                container.style.display = 'block';
+                btn.textContent = 'Show Less';
+            }
+        }
+    </script>
+</body>
+</html>
